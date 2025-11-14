@@ -1,2 +1,55 @@
-Creative Commons Attribution 4.0 International (CC BY 4.0)
-This repository contains documentation and write-ups. You are free to share and adapt with attribution. See https://creativecommons.org/licenses/by/4.0/ for full terms.
+# License
+
+## Documentation and Demo Materials
+
+This repository contains **public-safe documentation and performance data** for TTAPI, a private Rust application.
+
+**License:** Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+You are free to:
+- **Share** — copy and redistribute the material in any medium or format
+- **Adapt** — remix, transform, and build upon the material for any purpose, even commercially
+
+Under the following terms:
+- **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made
+
+See https://creativecommons.org/licenses/by/4.0/ for full terms.
+
+---
+
+## TTAPI Source Code
+
+**The TTAPI source code is NOT included in this repository and is NOT covered by this license.**
+
+TTAPI source code is dual-licensed under:
+- **MPL-2.0** (Mozilla Public License 2.0) OR
+- **LicenseRef-TTAPI-Commercial** (Commercial license)
+
+For licensing inquiries regarding TTAPI source code, contact: skylegal@nios.net
+
+---
+
+## Copyright
+
+**Copyright © 2025 SKY, LLC. All rights reserved.**
+
+**Author:** Robert Nio
+**Contact:** [GitHub](https://github.com/githubrobbi) | [LinkedIn](https://linkedin.com/in/robertnio)
+
+---
+
+## Disclaimer
+
+This repository contains only:
+- ✅ Public-safe documentation
+- ✅ Architecture descriptions
+- ✅ Performance benchmarks from real production runs
+- ✅ Code examples (illustrative, not production code)
+- ✅ Demo videos
+
+This repository does NOT contain:
+- ❌ TTAPI source code
+- ❌ Proprietary algorithms
+- ❌ API keys or credentials
+- ❌ Internal company data
+- ❌ Trading strategies

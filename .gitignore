@@ -1,6 +1,7 @@
 # OS/Editor
 .DS_Store
 *.swp
+.idea/
 # Build/Artifacts
 site/
 *.log
