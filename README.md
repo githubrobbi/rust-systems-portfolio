@@ -1,45 +1,60 @@
 # Rust Systems Portfolio — Robert Nio
 
-**World-class Rust systems programming: safety, performance, and production-grade architecture.**
+Public-safe artifacts for backend and systems engineering work in Rust.
 
-This repository showcases my Rust systems work through **public-safe documentation** and **real-world performance data** from TTAPI, a high-performance financial data platform.
-
----
-
-## What's Inside
-
-### 📊 Performance Benchmarks
-- **23x faster** end-to-end pipeline with intelligent caching
-- **438,000 rows/second** data import throughput
-- **8x more memory efficient** than Python/Pandas equivalents
-- Real-world performance data from production runs
-
-### 🏗️ Architecture Deep Dives
-- Workspace structure (Polars-inspired domain separation)
-- Async/await concurrency with Tokio
-- Zero-copy data processing with Polars
-- Circuit breakers & resilience patterns
-- TTL-based intelligent caching
-
-### ⚖️ Technology Comparisons
-- Rust vs. Python/Pandas (40x faster)
-- Rust vs. C++ (memory safety without GC)
-- Rust vs. Go (no GC pauses)
-- Data-driven performance analysis
-
-### 📝 Engineering Write-Ups
-- Panic-free Rust APIs (420 lines with real TTAPI examples)
-- Bench-first development (445 lines with optimization process)
-- Production-grade error handling with `thiserror`
-
-### 🎥 Demo Videos
-- Initial run (cold cache): 3m 2s full pipeline
-- Cached run: 7.8s with TTL-based cache hits (23x speedup)
-- Real production performance with actual data
+This repository collects architecture notes, benchmark summaries, demos, and engineering write-ups from my Rust project work. It is meant to show how I approach performance, API design, testing, and operational reliability without exposing private source code.
 
 ---
 
-## Live Site
+## Start here
+
+If you only open a few links, these are the best entry points:
+
+- **UFFS (public code)**  
+  https://github.com/skyllc-ai/UltraFastFileSearch
+
+- **Portfolio home**  
+  https://githubrobbi.github.io/rust-systems-portfolio/
+
+- **TTAPI one-pager**  
+  https://githubrobbi.github.io/rust-systems-portfolio/ttapi-one-pager.html
+
+- **TTAPI demo**  
+  https://githubrobbi.github.io/rust-systems-portfolio/demo/ttapi-demo-script.html
+
+- **Panic-Free Rust APIs**  
+  https://githubrobbi.github.io/rust-systems-portfolio/posts/panic-free-rust-apis.html
+
+- **Bench-First Rust Development**  
+  https://githubrobbi.github.io/rust-systems-portfolio/posts/bench-first-rust-development.html
+
+---
+
+## What this repository covers
+
+### Public-safe project artifacts
+- **UFFS (public code)** — a Rust NTFS search/indexing project with benchmarked cold/warm behavior, persisted cache, and daemon-backed query flow.
+- **TTAPI (private code, public-safe materials)** — architecture notes, benchmark summaries, and demo pages for a Rust data/analytics workspace.
+- **Engineering write-ups** — short articles on panic-free APIs, bench-first development, and practical error handling.
+
+### Engineering themes
+- Indexing, data-intensive workflows, and caching
+- Async concurrency with Tokio
+- Data pipelines and structured logging
+- Clear APIs, typed errors, and operational predictability
+- Reproducible benchmarks and measurable performance work
+
+### Measured examples included in the docs
+- Cached vs. uncached workflow comparisons, including a documented example of roughly **23x** speedup from cache reuse
+- Data import throughput examples around **438,000 rows/second** in documented runs
+- Bounded concurrency and backpressure patterns for networked workflows
+- Test, lint, and CI practices used to keep changes reviewable and repeatable
+
+> Performance figures in this repository come from documented runs on specific workloads and environments. They are intended to show measurement discipline and engineering trade-offs, not universal benchmarks.
+
+---
+
+## Live site
 
 **GitHub Pages:** https://githubrobbi.github.io/rust-systems-portfolio/
 
@@ -47,68 +62,62 @@ The site is built from the `/docs` folder using GitHub Pages with Jekyll.
 
 ---
 
-## Key Highlights
+## Documentation structure
 
-🚀 **23x faster** end-to-end pipeline with intelligent caching
-⚡ **438,000 rows/second** data import throughput
-💾 **8x more memory efficient** than Python/Pandas equivalents
-🔄 **100 concurrent requests** with semaphore-based backpressure
-🎯 **≥90% test coverage** with zero clippy::pedantic warnings
-🛡️ **Circuit breakers & resilience** for fault-tolerant operation
-
----
-
-## Documentation Structure
-
-```
+```text
 docs/
-├── index.md                          # Main landing page (162 lines)
-├── performance-benchmarks.md         # Detailed performance metrics (233 lines)
-├── rust-excellence.md                # Architecture & code examples (233 lines)
-├── architecture-deep-dive.md         # System diagrams & data flow (233 lines)
-├── why-rust.md                       # Technology comparison (233 lines)
-├── ttapi-one-pager.md               # Quick technical overview (224 lines)
+├── index.md
+├── performance-benchmarks.md
+├── rust-excellence.md
+├── architecture-deep-dive.md
+├── why-rust.md
+├── ttapi-one-pager.md
 ├── demo/
-│   ├── ttapi-demo-script.md         # Demo videos page (103 lines)
-│   ├── TTAPI 1st run 2025-11-13.mov # Initial run video (8.4 MB)
-│   ├── TTAPI 2nd run 2025-11-13.mov # Cached run video (3.1 MB)
-│   └── README.md                     # Video documentation
+│   ├── ttapi-demo-script.md
+│   └── README.md
 └── posts/
-    ├── panic-free-rust-apis.md      # Error handling patterns (420 lines)
-    └── bench-first-rust-development.md  # Performance practices (445 lines)
+    ├── panic-free-rust-apis.md
+    └── bench-first-rust-development.md
 ```
-
-**Total:** 2,286 lines of comprehensive technical documentation + 2 demo videos
 
 ---
 
 ## About TTAPI
 
-TTAPI is a **production-grade Rust application** for financial data collection and analysis, demonstrating:
-- Async/await concurrency with Tokio's work-stealing scheduler
-- Zero-copy data processing with Polars' columnar format
-- Type-safe error handling with `thiserror` and `Result<T, E>`
-- Workspace architecture inspired by Polars (domain-separated crates)
-- Circuit breakers & resilience patterns for fault-tolerant systems
-- TTL-based intelligent caching with automatic invalidation
-- Dual-format persistence (Parquet + CSV) with background I/O
+TTAPI is a private Rust workspace for financial data collection and analysis. The public materials in this repository focus on:
 
-**Note:** The TTAPI source code is private. This repository contains only public-safe documentation and performance data.
+- Workspace structure and crate boundaries
+- Tokio-based concurrency and bounded parallelism
+- Data processing and persistence workflows
+- Retry, backoff, caching, and resilience patterns
+- Typed error handling and structured logging
+- Benchmarking and performance-oriented development practices
+
+The TTAPI source code is **not** included here. Public pages use synthetic or non-sensitive examples and focus on architecture, benchmarks, and engineering practices.
+
+---
+
+## Why this repo exists
+
+This repository is documentation-first by design. Some of my work is public code, and some is represented through public-safe artifacts only. The goal is to make my approach easy to evaluate without exposing private source or sensitive implementation details.
+
+If you want the strongest public code example first, start with **UFFS**:
+https://github.com/skyllc-ai/UltraFastFileSearch
 
 ---
 
 ## Contact
 
-**Robert Nio**
-Rust Systems Engineer
-[GitHub](https://github.com/githubrobbi) | [LinkedIn](https://linkedin.com/in/robertnio)
+**Robert Nio**  
+Backend / Systems Engineer  
+[GitHub](https://github.com/githubrobbi) | [LinkedIn](https://linkedin.com/in/robert-nio-46029a)
 
 ---
 
 ## License
 
-**Documentation:** Creative Commons Attribution 4.0 International (CC BY 4.0)
-**TTAPI Source Code:** MPL-2.0 OR LicenseRef-TTAPI-Commercial (NOT included in this repository)
+**Documentation:** Creative Commons Attribution 4.0 International (CC BY 4.0)  
+**TTAPI Source Code:** MPL-2.0 OR LicenseRef-TTAPI-Commercial (not included in this repository)
 
 See [LICENSE](LICENSE) for full details.
 
