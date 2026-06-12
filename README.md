@@ -33,7 +33,7 @@ If you only open a few links, these are the best entry points:
 ## What this repository covers
 
 ### Public-safe project artifacts
-- **UFFS (public code)** — a Rust NTFS search/indexing project with benchmarked cold/warm behavior, persisted cache, and daemon-backed query flow.
+- **UFFS (public code)** — a Rust NTFS search/indexing project with benchmarked cold/warm behavior, persisted cache, and daemon-backed query flow. Current canonical benchmark (v0.5.120): **30/30 head-to-head cells faster than Everything** at p50 (median ~2.8× faster) and a full 7-drive, 23.3M-record CSV export in 12.0 s (~1.95M records/sec) — every number version-stamped and backed by raw logs in the [benchmark hub](https://github.com/skyllc-ai/UltraFastFileSearch/tree/main/docs/benchmarks).
 - **TTAPI (private code, public-safe materials)** — architecture notes, benchmark summaries, and demo pages for a Rust data/analytics workspace.
 - **Engineering write-ups** — short articles on panic-free APIs, bench-first development, and practical error handling.
 
